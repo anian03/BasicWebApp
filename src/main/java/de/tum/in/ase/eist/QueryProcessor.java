@@ -13,10 +13,10 @@ public class QueryProcessor {
                     "writer in the English language and the world's pre-eminent dramatist.";
         } else if (query.contains("name")) {
            return "Anian";
-        } else if (query.contains("what is 2 plus 1")) {
-            return "3";
-        } else if (query.contains("what is 16 plus 18")) {
-            return "34";
+        } else if (query.contains("plus")) {
+            String first = query.split("is ")[0].split(" ")[0];
+            String second = query.split("plus ")[1];
+            return Integer.toString(Integer.parseInt(first) + Integer.parseInt(second));
         } else {
             return "";
         }
