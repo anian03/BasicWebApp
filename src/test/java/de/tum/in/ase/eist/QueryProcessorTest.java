@@ -23,6 +23,14 @@ class QueryProcessorTest {
 	}
 
 	@Test
+	void testName() {
+		String actual = queryProcessor.process("what is your name");
+		if (!actual.contains("Anian")) {
+			fail("The QueryProcessor does not know the name.");
+		}
+	}
+
+	@Test
 	void isNotCaseSensitive() {
 		String actual = queryProcessor.process("shakespeare");
 		if (!actual.contains("playwright")) {
