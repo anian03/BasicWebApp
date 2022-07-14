@@ -2,6 +2,8 @@ package de.tum.in.ase.eist;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class QueryProcessor {
 
@@ -17,6 +19,12 @@ public class QueryProcessor {
             String first = query.split("is ")[0].split(" ")[0];
             String second = query.split("plus ")[1];
             return Integer.toString(Integer.parseInt(first) + Integer.parseInt(second));
+        } else if (query.contains("which of the following numbers is the largest")) {
+            String b = query.split("which of the following numbers is the largest: ")[0];
+            String[] numbers = b.split(", ");
+            Integer[] nums = List.of(numbers).stream().map(e -> Integer.parseInt(e)).toArray(Integer[]::new);
+
+            return Integer.toString(Integer.max(nums[0], nums[1]));
         } else {
             return "";
         }
