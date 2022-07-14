@@ -24,7 +24,7 @@ class QueryProcessorTest {
 
 	@Test
 	void testName() {
-		String actual = queryProcessor.process("what is 19 plus 7");
+		String actual = queryProcessor.process("which of the following numbers is the largest: 10, 26");
 		System.out.println(actual);
 		if (!actual.contains("26")) {
 			fail(actual);

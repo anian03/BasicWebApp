@@ -20,7 +20,7 @@ public class QueryProcessor {
             String second = query.split("plus ")[1];
             return Integer.toString(Integer.parseInt(first) + Integer.parseInt(second));
         } else if (query.contains("which of the following numbers is the largest")) {
-            String b = query.split("which of the following numbers is the largest: ")[0];
+            String b = query.split("which of the following numbers is the largest: ")[1];
             String[] numbers = b.split(", ");
             Integer[] nums = List.of(numbers).stream().map(e -> Integer.parseInt(e)).toArray(Integer[]::new);
 
