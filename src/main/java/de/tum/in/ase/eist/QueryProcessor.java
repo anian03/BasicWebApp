@@ -16,7 +16,7 @@ public class QueryProcessor {
         } else if (query.contains("name")) {
            return "Anian";
         } else if (query.contains("plus")) {
-            String first = query.split("is ")[0].split(" ")[0];
+            String first = query.split("is ")[1].split(" ")[0];
             String second = query.split("plus ")[1];
             return Integer.toString(Integer.parseInt(first) + Integer.parseInt(second));
         } else if (query.contains("which of the following numbers is the largest")) {

@@ -24,9 +24,10 @@ class QueryProcessorTest {
 
 	@Test
 	void testName() {
-		String actual = queryProcessor.process("what is your name");
-		if (!actual.contains("Anian")) {
-			fail("The QueryProcessor does not know the name.");
+		String actual = queryProcessor.process("what is 19 plus 7");
+		System.out.println(actual);
+		if (!actual.contains("26")) {
+			fail(actual);
 		}
 	}
 
